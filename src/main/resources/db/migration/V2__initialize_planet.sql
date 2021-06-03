@@ -5,6 +5,6 @@ CREATE TABLE tplanet (
   name    VARCHAR(50) NOT NULL,
   governor_id    smallint NOT NULL,
    PRIMARY KEY (planet_id),
-   CONSTRAINT FK_tplanet_tgovernor FOREIGN KEY (planet_id)
+   CONSTRAINT FK_tplanet_tgovernor FOREIGN KEY (governor_id)
   REFERENCES tgovernor (governor_id)
 ) ;

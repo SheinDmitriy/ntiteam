@@ -7,12 +7,13 @@
 </head>
 <body>
 <div>
-    <table>
+    <table border="1" style="border-collapse: collapse">
         <thead>
         <tr>
             <th>id</th>
             <th>name</th>
             <th>age</th>
+            <th>planet</th>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,11 @@
             <td th:text="${governor.getGovernorId}"></td>
             <td th:text="${governor.getName}"></td>
             <td th:text="${governor.getAge}"></td>
+            <td>
+                <div th:each="planet : ${governor.getPlanets()}">
+                    <div th:text="${planet.getName()}"></div>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
