@@ -19,7 +19,7 @@ public class MainController {
 
     @GetMapping
     public String showAll(Model model){
-        model.addAttribute(governorService.findAll());
+        model.addAttribute("governors", governorService.findAll());
         return "main";
     }
 }

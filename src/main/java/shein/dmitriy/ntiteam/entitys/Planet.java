@@ -19,5 +19,5 @@ public class Planet {
 
     @ManyToOne
     @JoinColumn(name = "governor_id")
-    private int governorId;
+    private Governor governor;
 }
