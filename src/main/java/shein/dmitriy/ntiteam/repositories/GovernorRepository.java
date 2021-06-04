@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface GovernorRepository extends CrudRepository<Governor, Integer> {
     List<Governor> findAll();
+    Governor findByGovernorId(int id);
 }

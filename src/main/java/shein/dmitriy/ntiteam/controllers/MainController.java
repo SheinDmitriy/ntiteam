@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import shein.dmitriy.ntiteam.entitys.Governor;
+import shein.dmitriy.ntiteam.entitys.Planet;
 import shein.dmitriy.ntiteam.entitys.SystemGover;
 import shein.dmitriy.ntiteam.entitys.SystemPlanet;
 import shein.dmitriy.ntiteam.services.GovernorService;
@@ -41,6 +43,12 @@ public class MainController {
     @PostMapping("/addPlanet")
     public String addPlanet(SystemPlanet systemPlanet){
         planetService.save(systemPlanet);
+        return "redirect:/";
+    }
+
+    @PostMapping("/chooseGover")
+    public String chooseGovernor(SystemGover systemGover, SystemPlanet systemPlanet){
+        planetService.choose(systemGover, systemPlanet);
         return "redirect:/";
     }
 }

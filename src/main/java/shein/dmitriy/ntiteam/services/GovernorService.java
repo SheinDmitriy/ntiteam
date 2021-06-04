@@ -27,4 +27,8 @@ public class GovernorService {
         governor.setName(systemGover.getName());
         governorRepository.save(governor);
     }
+
+    public Governor findById(int id){
+        return governorRepository.findByGovernorId(id);
+    }
 }

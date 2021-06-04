@@ -50,7 +50,7 @@
                             <td th:text="${planet.getPlanetId()}"></td>
                             <td th:text="${planet.getName()}"></td>
                             <td th:unless="${planet.getGovernor() != null}"></td>
-                            <td th:if="${planet.getGovernor() != null}" th:text="${planet.getGovernor().name}"></td>
+                            <td th:if="${planet.getGovernor() != null}" th:text="${planet.getGovernor().getName()}"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -85,6 +85,33 @@
                         <input type="text" th:field="*{name}">
                     </p>
                     <button type="submit" value="Save">Добавить планету</button>
+                </form>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <form th:action="@{/chooseGover}"  th:object="${systemGover}" method="post">
+
+                    <p>Выберите Правителя:</p>
+                    <p>
+                        <select th:field="*{governorId}">
+                            <option th:each="governor : ${governors}"
+                                    th:text="${governor.getName()}"
+                                    th:value="${governor.getGovernorId()}"
+                                    ></option>
+                        </select>
+                    </p>
+                    <div th:object="${systemPlanet}">
+                    <p>Выберите Планету:</p>
+                    <p>
+                        <select th:field="*{planetId}">
+                            <option th:each="planet : ${planets}"
+                                    th:text="${planet.getName()}"
+                                    th:value="${planet.getPlanetId()}"></option>
+                        </select>
+                    </p>
+                    <button type="submit" value="Save">Назначить Правителя</button>
+                    </div>
                 </form>
             </td>
         </tr>
