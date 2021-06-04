@@ -6,4 +6,13 @@ VALUES
 ('planet4',4),
 ('planet5',1),
 ('planet6',3),
-('planet7',5);
+('planet7',5),
+('planet8',6),
+('planet9',7),
+('planet10',8),
+('planet11',9),
+('planet12',10),
+('planet13',11),
+('planet14',12),
+('planet15',13),
+('planet16',1);
