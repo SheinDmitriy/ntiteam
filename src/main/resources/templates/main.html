@@ -29,6 +29,20 @@
         </tr>
         </tbody>
     </table>
+    <br>
+    <hr>
+    <br>
+    <form th:action="@{/addGover}" th:object="${systemGover}" method="post">
+        <p>Имя Правителя:</p>
+        <p>
+            <input type="text" th:field="*{name}">
+        </p>
+        <p>Возраст Правителя:</p>
+        <p>
+            <input type="number" th:field="*{age}">
+        </p>
+        <button type="submit" value="Save">Добавить правителя</button>
+    </form>
 </div>
 
 </body>
