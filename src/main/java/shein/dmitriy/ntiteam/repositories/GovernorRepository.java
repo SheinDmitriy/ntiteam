@@ -1,5 +1,6 @@
 package shein.dmitriy.ntiteam.repositories;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import shein.dmitriy.ntiteam.entitys.Governor;
@@ -10,4 +11,9 @@ import java.util.List;
 public interface GovernorRepository extends CrudRepository<Governor, Integer> {
     List<Governor> findAll();
     Governor findByGovernorId(int id);
+
+       List<Governor> findGovernorsByPlanetsIsNull();
+
+
+//    List<Governor> findAllOrderByAge();
 }

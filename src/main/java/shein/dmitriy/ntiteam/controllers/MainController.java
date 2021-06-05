@@ -29,6 +29,8 @@ public class MainController {
         model.addAttribute("planets", planetService.findAll());
         model.addAttribute("governor", new Governor());
         model.addAttribute("planet", new Planet());
+        model.addAttribute("slackers", governorService.slackers());
+//        model.addAttribute("tops", governorService.top10());
         return "main";
     }
 

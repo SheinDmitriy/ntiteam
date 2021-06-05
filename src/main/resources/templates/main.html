@@ -130,6 +130,51 @@
             </td>
         </tr>
     </table>
+    <br>
+    <hr>
+    <br>
+    <table>
+        <tr>
+            <td>
+                <h3 align="center">Бездельники</h3>
+                <table border="1" style="border-collapse: collapse">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="slacker : ${slackers}">
+                        <td th:text="${slacker.getGovernorId()}"></td>
+                        <td th:text="${slacker.getName()}"></td>
+                        <td th:text="${slacker.getAge()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <h3 align="center">ТОП 10</h3>
+                <!--<table border="1" style="border-collapse: collapse">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>id</th>-->
+                        <!--<th>name</th>-->
+                        <!--<th>age</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr th:each="top : ${tops}">-->
+                        <!--<td th:text="${top.getGovernorId()}"></td>-->
+                        <!--<td th:text="${top.getName()}"></td>-->
+                        <!--<td th:text="${top.getAge()}"></td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            </td>
+        </tr>
+    </table>
 
 </div>
 

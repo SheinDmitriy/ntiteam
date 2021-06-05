@@ -29,4 +29,12 @@ public class GovernorService {
     public Governor findById(int id){
         return governorRepository.findByGovernorId(id);
     }
+
+    public List<Governor> slackers() {
+        return governorRepository.findGovernorsByPlanetsIsNull();
+    }
+
+//    public List<Governor> top10() {
+//        return governorRepository.findFirst10ByAgeOrderByAge();
+//    }
 }
