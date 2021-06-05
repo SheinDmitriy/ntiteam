@@ -71,7 +71,7 @@
                     </p>
                     <p>Возраст Правителя:</p>
                     <p>
-                        <input type="number" th:field="*{age}">
+                        <input type="number" th:field="*{age}" value="0">
                     </p>
                     <button type="submit" value="Save">Добавить правителя</button>
                 </form>
@@ -156,22 +156,22 @@
             </td>
             <td>
                 <h3 align="center">ТОП 10</h3>
-                <!--<table border="1" style="border-collapse: collapse">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>id</th>-->
-                        <!--<th>name</th>-->
-                        <!--<th>age</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<tr th:each="top : ${tops}">-->
-                        <!--<td th:text="${top.getGovernorId()}"></td>-->
-                        <!--<td th:text="${top.getName()}"></td>-->
-                        <!--<td th:text="${top.getAge()}"></td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
+                <table border="1" style="border-collapse: collapse">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="top : ${tops}">
+                        <td th:text="${top.getGovernorId()}"></td>
+                        <td th:text="${top.getName()}"></td>
+                        <td th:text="${top.getAge()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
     </table>

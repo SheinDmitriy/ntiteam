@@ -30,7 +30,7 @@ public class MainController {
         model.addAttribute("governor", new Governor());
         model.addAttribute("planet", new Planet());
         model.addAttribute("slackers", governorService.slackers());
-//        model.addAttribute("tops", governorService.top10());
+        model.addAttribute("tops", governorService.top10());
         return "main";
     }
 

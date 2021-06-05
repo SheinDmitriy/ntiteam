@@ -34,7 +34,7 @@ public class GovernorService {
         return governorRepository.findGovernorsByPlanetsIsNull();
     }
 
-//    public List<Governor> top10() {
-//        return governorRepository.findFirst10ByAgeOrderByAge();
-//    }
+    public List<Governor> top10() {
+        return governorRepository.findTop10GovernorsByAgeNotNullOrderByAge();
+    }
 }
