@@ -2,6 +2,7 @@ package shein.dmitriy.ntiteam.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import shein.dmitriy.ntiteam.entitys.Governor;
 import shein.dmitriy.ntiteam.repositories.GovernorRepository;
 
@@ -20,6 +21,7 @@ public class GovernorService {
         return governorRepository.findAll();
     }
 
+    @Transactional
     public void save(Governor governor) {
         governorRepository.save(governor);
     }

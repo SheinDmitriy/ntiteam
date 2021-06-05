@@ -113,6 +113,21 @@
                     </div>
                 </form>
             </td>
+            <td>
+                <form th:action="@{/delPlanet}"  th:object="${planet}" method="post">
+
+
+                        <p>Выберите Планету:</p>
+                        <p>
+                            <select th:field="*{planetId}">
+                                <option th:each="planet : ${planets}"
+                                        th:text="${planet.getName()}"
+                                        th:value="${planet.getPlanetId()}"></option>
+                            </select>
+                        </p>
+                        <button type="submit" value="Save">Взорвать планету</button>
+                </form>
+            </td>
         </tr>
     </table>
 

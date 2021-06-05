@@ -49,4 +49,10 @@ public class MainController {
         planetService.choose(governor, planet);
         return "redirect:/";
     }
+
+    @PostMapping("/delPlanet")
+    public String delPlanet(Planet planet){
+        planetService.delete(planet);
+        return "redirect:/";
+    }
 }

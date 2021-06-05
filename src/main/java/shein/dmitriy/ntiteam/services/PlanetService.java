@@ -2,6 +2,7 @@ package shein.dmitriy.ntiteam.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import shein.dmitriy.ntiteam.entitys.Governor;
 import shein.dmitriy.ntiteam.entitys.Planet;
 import shein.dmitriy.ntiteam.repositories.PlanetRepository;
@@ -19,6 +20,7 @@ public class PlanetService {
         this.governorService = governorService;
     }
 
+    @Transactional
     public void save(Planet planet) {
         planetRepository.save(planet);
     }
@@ -36,5 +38,10 @@ public class PlanetService {
         Governor governor = governorService.findById(governorForm.getGovernorId());
         planet.setGovernor(governor);
         planetRepository.save(planet);
+    }
+
+    @Transactional
+    public void delete(Planet planet) {
+        planetRepository.deleteById(planet.getPlanetId());
     }
 }
