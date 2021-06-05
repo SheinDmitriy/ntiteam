@@ -64,7 +64,7 @@
     <table>
         <tr>
             <td>
-                <form th:action="@{/addGover}" th:object="${systemGover}" method="post">
+                <form th:action="@{/addGover}" th:object="${governor}" method="post">
                     <p>Имя Правителя:</p>
                     <p>
                         <input type="text" th:field="*{name}">
@@ -79,7 +79,7 @@
             <td></td>
             <td></td>
             <td>
-                <form th:action="@{/addPlanet}" th:object="${systemPlanet}" method="post">
+                <form th:action="@{/addPlanet}" th:object="${planet}" method="post">
                     <p>Имя Планеты:</p>
                     <p>
                         <input type="text" th:field="*{name}">
@@ -90,18 +90,17 @@
             <td></td>
             <td></td>
             <td>
-                <form th:action="@{/chooseGover}"  th:object="${systemGover}" method="post">
+                <form th:action="@{/chooseGover}"  th:object="${governor}" method="post">
 
                     <p>Выберите Правителя:</p>
                     <p>
                         <select th:field="*{governorId}">
                             <option th:each="governor : ${governors}"
                                     th:text="${governor.getName()}"
-                                    th:value="${governor.getGovernorId()}"
-                                    ></option>
+                                    th:value="${governor.getGovernorId()}"></option>
                         </select>
                     </p>
-                    <div th:object="${systemPlanet}">
+                    <div th:object="${planet}">
                     <p>Выберите Планету:</p>
                     <p>
                         <select th:field="*{planetId}">

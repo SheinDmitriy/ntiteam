@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shein.dmitriy.ntiteam.entitys.Governor;
 import shein.dmitriy.ntiteam.entitys.Planet;
-import shein.dmitriy.ntiteam.entitys.SystemGover;
-import shein.dmitriy.ntiteam.entitys.SystemPlanet;
 import shein.dmitriy.ntiteam.repositories.PlanetRepository;
 
 import java.util.List;
@@ -21,9 +19,7 @@ public class PlanetService {
         this.governorService = governorService;
     }
 
-    public void save(SystemPlanet systemPlanet) {
-        Planet planet = new Planet();
-        planet.setName(systemPlanet.getName());
+    public void save(Planet planet) {
         planetRepository.save(planet);
     }
 
@@ -35,7 +31,7 @@ public class PlanetService {
         return planetRepository.findByPlanetId(id);
     }
 
-    public void choose(SystemGover governorForm, SystemPlanet planetForm) {
+    public void choose(Governor governorForm, Planet planetForm) {
         Planet planet = findById(planetForm.getPlanetId());
         Governor governor = governorService.findById(governorForm.getGovernorId());
         planet.setGovernor(governor);

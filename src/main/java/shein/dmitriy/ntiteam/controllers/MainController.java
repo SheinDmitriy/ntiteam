@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import shein.dmitriy.ntiteam.entitys.Governor;
 import shein.dmitriy.ntiteam.entitys.Planet;
-import shein.dmitriy.ntiteam.entitys.SystemGover;
-import shein.dmitriy.ntiteam.entitys.SystemPlanet;
 import shein.dmitriy.ntiteam.services.GovernorService;
 import shein.dmitriy.ntiteam.services.PlanetService;
 
@@ -29,26 +27,26 @@ public class MainController {
     public String showAll(Model model){
         model.addAttribute("governors", governorService.findAll());
         model.addAttribute("planets", planetService.findAll());
-        model.addAttribute("systemGover", new SystemGover());
-        model.addAttribute("systemPlanet", new SystemPlanet());
+        model.addAttribute("governor", new Governor());
+        model.addAttribute("planet", new Planet());
         return "main";
     }
 
     @PostMapping("/addGover")
-    public String addGovernor(SystemGover systemGover){
-        governorService.save(systemGover);
+    public String addGovernor(Governor governor){
+        governorService.save(governor);
         return "redirect:/";
     }
 
     @PostMapping("/addPlanet")
-    public String addPlanet(SystemPlanet systemPlanet){
-        planetService.save(systemPlanet);
+    public String addPlanet(Planet planet){
+        planetService.save(planet);
         return "redirect:/";
     }
 
     @PostMapping("/chooseGover")
-    public String chooseGovernor(SystemGover systemGover, SystemPlanet systemPlanet){
-        planetService.choose(systemGover, systemPlanet);
+    public String chooseGovernor(Governor governor, Planet planet){
+        planetService.choose(governor, planet);
         return "redirect:/";
     }
 }
