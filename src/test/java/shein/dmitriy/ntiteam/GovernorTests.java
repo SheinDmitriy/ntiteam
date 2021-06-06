@@ -19,9 +19,6 @@ class GovernorTests {
     @Autowired
     private GovernorService governorService;
 
-    @Autowired
-    private PlanetService planetService;
-
     @Test
     void governorFindByIdTest() {
         Governor governor = governorService.findById(1);

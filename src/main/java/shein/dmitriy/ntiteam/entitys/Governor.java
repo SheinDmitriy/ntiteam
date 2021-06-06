@@ -21,7 +21,7 @@ public class Governor {
     @Column(name = "age")
     private short age;
 
-    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "governor", fetch = FetchType.EAGER)
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "governor")
     private List<Planet> planets;
 
 
