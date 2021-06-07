@@ -33,6 +33,7 @@ public class PlanetService {
         return planetRepository.findByPlanetId(id);
     }
 
+    @Transactional
     public void choose(Governor governorForm, Planet planetForm) {
         Planet planet = findById(planetForm.getPlanetId());
         Governor governor = governorService.findById(governorForm.getGovernorId());
