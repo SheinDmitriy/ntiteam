@@ -21,8 +21,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="governor : ${governors}">
-                            <td th:text="${governor.getGovernorId()}"></td>
+                        <tr th:each="governor : ${governors}" id="gov">
+                            <td th:text="${governor.getGovernorId()}" ></td>
                             <td th:text="${governor.getName()}"></td>
                             <td th:text="${governor.getAge()}"></td>
                             <td>
@@ -46,8 +46,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="planet : ${planets}">
-                            <td th:text="${planet.getPlanetId()}"></td>
+                        <tr th:each="planet : ${planets}" id="plan">
+                            <td th:text="${planet.getPlanetId()}" ></td>
                             <td th:text="${planet.getName()}"></td>
                             <td th:unless="${planet.getGovernor() != null}"></td>
                             <td th:if="${planet.getGovernor() != null}" th:text="${planet.getGovernor().getName()}"></td>
@@ -67,14 +67,14 @@
                 <form th:action="@{/addGover}" th:object="${governor}" method="post">
                     <p>Имя Правителя:</p>
                     <p>
-                        <input type="text" th:field="*{name}">
+                        <input type="text" th:field="*{name}" id="add_gover_name_field">
                     </p>
                     <p>Возраст Правителя:</p>
                     <p>
-                        <input type="number" th:field="*{age}" value="0">
+                        <input type="number" th:field="*{age}" value="0" id="add_gover_age_field">
                     <p th:if="${error != null}" th:text="${error}"></p>
                     </p>
-                    <button type="submit" value="Save">Добавить правителя</button>
+                    <button type="submit" value="Save" id="add_gover_button">Добавить правителя</button>
                 </form>
             </td>
             <td></td>
@@ -83,9 +83,9 @@
                 <form th:action="@{/addPlanet}" th:object="${planet}" method="post">
                     <p>Имя Планеты:</p>
                     <p>
-                        <input type="text" th:field="*{name}">
+                        <input type="text" th:field="*{name}" id="add_planet_name_field">
                     </p>
-                    <button type="submit" value="Save">Добавить планету</button>
+                    <button type="submit" value="Save" id="add_planet_button">Добавить планету</button>
                 </form>
             </td>
             <td></td>
@@ -95,7 +95,7 @@
 
                     <p>Выберите Правителя:</p>
                     <p>
-                        <select th:field="*{governorId}">
+                        <select th:field="*{governorId}" id="choose_gover_select">
                             <option th:each="governor : ${governors}"
                                     th:text="${governor.getName()}"
                                     th:value="${governor.getGovernorId()}"></option>
@@ -104,13 +104,13 @@
                     <div th:object="${planet}">
                     <p>Выберите Планету:</p>
                     <p>
-                        <select th:field="*{planetId}">
+                        <select th:field="*{planetId}" id="choose_planet_select">
                             <option th:each="planet : ${planets}"
                                     th:text="${planet.getName()}"
                                     th:value="${planet.getPlanetId()}"></option>
                         </select>
                     </p>
-                    <button type="submit" value="Save">Назначить Правителя</button>
+                    <button type="submit" value="Save" id="choose_gover_button">Назначить Правителя</button>
                     </div>
                 </form>
             </td>
@@ -120,13 +120,13 @@
 
                         <p>Выберите Планету:</p>
                         <p>
-                            <select th:field="*{planetId}">
+                            <select th:field="*{planetId}" id="delete_planet_select">
                                 <option th:each="planet : ${planets}"
                                         th:text="${planet.getName()}"
                                         th:value="${planet.getPlanetId()}"></option>
                             </select>
                         </p>
-                        <button type="submit" value="Save">Взорвать планету</button>
+                        <button type="submit" value="Save" id="delete_planet_button">Взорвать планету</button>
                 </form>
             </td>
         </tr>
@@ -147,8 +147,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="slacker : ${slackers}">
-                        <td th:text="${slacker.getGovernorId()}"></td>
+                    <tr th:each="slacker : ${slackers}" id="slac">
+                        <td th:text="${slacker.getGovernorId()}" ></td>
                         <td th:text="${slacker.getName()}"></td>
                         <td th:text="${slacker.getAge()}"></td>
                     </tr>
@@ -166,7 +166,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="top : ${tops}">
+                    <tr th:each="top : ${tops}" id="top">
                         <td th:text="${top.getGovernorId()}"></td>
                         <td th:text="${top.getName()}"></td>
                         <td th:text="${top.getAge()}"></td>
