@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -51,7 +50,6 @@ public class SeleniumTest {
     }
 
     @Test
-    @Transactional
     public void addGovernorTest(){
         WebElement nameGovernor = driver.findElement(By.id("add_gover_name_field"));
         WebElement ageGovernor = driver.findElement(By.id("add_gover_age_field"));
@@ -65,7 +63,6 @@ public class SeleniumTest {
     }
 
     @Test
-    @Transactional
     public void addPlanetTest(){
         WebElement namePlanet = driver.findElement(By.id("add_planet_name_field"));
         WebElement addPlanetButton = driver.findElement(By.id("add_planet_button"));
@@ -77,7 +74,6 @@ public class SeleniumTest {
     }
 
     @Test
-    @Transactional
     public void deletePlanetTest(){
         WebElement addPlanetButton = driver.findElement(By.id("delete_planet_button"));
         List<WebElement> rowsOld = driver.findElements(By.id("plan"));
@@ -87,7 +83,6 @@ public class SeleniumTest {
     }
 
     @Test
-    @Transactional
     public void chooseGovernorTest(){
         WebElement namePlanet = driver.findElement(By.id("add_planet_name_field"));
         WebElement addPlanetButton = driver.findElement(By.id("add_planet_button"));
